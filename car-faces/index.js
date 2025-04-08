@@ -1,55 +1,72 @@
-// Classifier Variable
+let imageModelURL = "https://teachablemachine.withgoogle.com/models/NDX5G56pT/";
+
 let classifier;
-// Model URL
-// HERE
-let imageModelURL = 'https://teachablemachine.withgoogle.com/models/6eL2SJyis/';
+let img = null;
+let canvas;
+let angryScore = null;
 
-// Video
-let video;
-let flippedVideo;
-// To store the classification
-let label = '';
-
-// Load the model first
 function preload() {
-	classifier = ml5.imageClassifier(imageModelURL + 'model.json');
-	console.log(classifier);
+	classifier = ml5.imageClassifier(imageModelURL + "model.json");
 }
 
 function setup() {
-	createCanvas(320, 260);
-	// Create the video
-	video = createCapture(VIDEO);
-	video.size(320, 240);
-	video.hide();
+	canvas = createCanvas(400, 400);
+	canvas.parent("sketch");
+	background(255);
 
-	// Start classifying
-	classifyVideo();
+	const fileInput = select("#file");
+	if (fileInput) fileInput.changed(handleFileInput);
 }
 
 function draw() {
-	background(0);
-	// Draw the video
-	image(video, 0, 0);
-
-	// Draw the label
-	fill(255);
-	textSize(16);
-	textAlign(CENTER);
-	text(label, width / 2, height - 4);
+	background(255);
+	if (img) {
+		image(img, 0, 0, width, height);
+	}
 }
 
-// Get a prediction for the current video frame
-function classifyVideo() {
-	classifier.classify(video, gotResult);
+function handleFileInput(event) {
+	const file = event.target.files[0];
+	if (file && file.type.startsWith("image/")) {
+		const reader = new FileReader();
+		reader.onload = function (e) {
+			if (img) img.remove(); // Altes Bild entfernen
+			img = createImg(e.target.result, "uploaded image");
+			img.hide(); // img bleibt im Speicher, aber wird nicht doppelt angezeigt
+			classifyImage(img);
+		};
+		reader.readAsDataURL(file);
+	}
 }
 
-// When we get a result
+function classifyImage(image) {
+	classifier.classify(image, gotResult);
+}
+
 function gotResult(results) {
-	console.log(results);
-	// The results are in an array ordered by confidence.
-	// console.log(results[0]);
-	label = results[0].label;
-	// Classifiy again!
-	classifyVideo();
+	console.log("Klassifizierung:", results);
+
+	if (!results || results.length === 0) return;
+
+	let happy = 0;
+	let angry = 0;
+
+	results.forEach(r => {
+		const l = r.label.toLowerCase();
+		if (l.includes("happy")) happy = r.confidence;
+		if (l.includes("angry")) angry = r.confidence;
+	});
+
+	if (happy + angry > 0) {
+		angryScore = angry / (happy + angry);
+	} else {
+		angryScore = results[0].label.toLowerCase().includes("angry") ? 1 : 0;
+	}
+
+	// Zeiger verschieben
+	const pointer = document.getElementById("scale-pointer");
+	if (pointer && angryScore !== null) {
+		const percent = angryScore * 100;
+		pointer.style.left = `calc(${percent}% - 1px)`;
+	}
 }
