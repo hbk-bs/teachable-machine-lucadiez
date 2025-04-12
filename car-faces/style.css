@@ -6,8 +6,6 @@ html, body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #f0f0f0;
-	font-family: sans-serif;
   }
   
   main {
@@ -25,16 +23,24 @@ html, body {
   }
   
   .file-label {
-	background: #000;
-	color: #fff;
-	padding: 0.5rem 1rem;
-	border-radius: 4px;
+	background-color: var(--black-color);
+	color: var(--white-color);
+	border: none;
+	padding: 0.75rem;
+	border-radius: 0.5rem;
+	font-size: 1rem;
 	cursor: pointer;
-	margin-bottom: 1rem;
+	font-weight: 500;
+	margin: 1rem 0rem 1rem 0rem;
+  }
+
+  .file-label:hover {
+	background-color: var(--main-color);
+	color: var(--sec-color);
   }
   
   canvas {
-	border: 1px solid #ccc;
+	border: 2px solid var(--white-color);;
 	margin-bottom: 1rem;
   }
   
@@ -55,7 +61,7 @@ html, body {
 	position: relative;
 	height: 12px;
 	background: linear-gradient(to right, #4caf50, #f44336);
-	border-radius: 6px;
+	border-radius: 2px;
   }
   
   .scale-pointer {
@@ -65,5 +71,6 @@ html, body {
 	height: 24px;
 	background: black;
 	transition: left 0.3s ease;
+	left: 50%;
   }
   

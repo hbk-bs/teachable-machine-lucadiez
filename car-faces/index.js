@@ -18,9 +18,33 @@ function setup() {
 function draw() {
   background(255);
   if (img) {
-    image(img, 0, 0, width, height);
+    // Originalgröße des Bildes
+    const originalW = img.width;
+    const originalH = img.height;
+
+    // Berechne das Verhältnis
+    const imgRatio = originalW / originalH;
+    const canvasRatio = width / height;
+
+    let drawW, drawH;
+
+    // Wenn Bild breiter als hoch
+    if (imgRatio > canvasRatio) {
+      drawW = width;
+      drawH = width / imgRatio;
+    } else {
+      drawH = height;
+      drawW = height * imgRatio;
+    }
+
+    // Zentriert zeichnen
+    const offsetX = (width - drawW) / 2;
+    const offsetY = (height - drawH) / 2;
+
+    image(img, offsetX, offsetY, drawW, drawH);
   }
 }
+
 
 function handleFileInput(e) {
   const file = e.target.files[0];

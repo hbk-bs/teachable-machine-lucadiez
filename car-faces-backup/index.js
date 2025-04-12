@@ -1,7 +1,7 @@
 //@ts-nocheck
 
 // @ts-ignore
-let imageModelURL = "https://teachablemachine.withgoogle.com/models/NDX5G56pT/";
+let imageModelURL = "https://teachablemachine.withgoogle.com/models/GdPa0SVYo/";
 
 let classifier;
 // @ts-ignore

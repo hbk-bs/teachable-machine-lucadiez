@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;/* 
+Setzt margin, padding und border für alle Elemnte auf 0
+*/
+  box-sizing: border-box; 
+/* box-sizing wird auf border-box geändert, damit padding und border in die Gesamtgröße eines Elements mit eingerechnet werden */
+}
+
+body {
+  line-height: 1.5; /* Legt den Zeilenabstand für den gesamnten body fest */
+}
+
+img, video {
+  max-width: 100%; /* Verhindert das Bilder usw. über übergeordnete Elemente hinaus gehen*/
+  height: auto; /* So wird das Seitenverhältnis festgelegt */
+}
+
+ul, ol {
+  list-style: none; /* 
+Entfernt die Listensymbole bei ungeordneten und geordneten Listen, so können hier eigene Sytle verwendet werden
+*/
+}
+
+a {
+  text-decoration: none; /* 
+Setzt die Standardstile von Links zurück und entfernt die Unterstreichung.
+*/
+}

@@ -1,0 +1,127 @@
+/* Base CSS von Luca */
+:root {
+	--main-color: #a0649b;
+	--sec-color: #fac8dc;
+	--black-color: #232323;
+	--white-color: #efefef;
+}
+
+body {
+	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+	/*Schriftwahl*/
+	font-weight: 300;
+	/* Standard Schriftschnitt*/
+	background-color: var(--white-color);
+	/* Standard Hintergrundfarbe*/
+	color: var(--black-color);
+	/* Standard Textfarbe*/
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 500;
+	/* Schriftschnitt für Überschriften*/
+	margin-bottom: 0.5em;
+	/* Mehr Abstand nach unten bei Überschriften */
+	color: var(--main-color);
+	/* Farbe für Überschriften */
+}
+
+/* Spezifische Größen für Überschriften – unter 768px */
+h1 {
+	font-size: 1.953rem;
+}
+
+h2 {
+	font-size: 1.563rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+h4 {
+	font-size: 1rem;
+}
+
+h5 {
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+
+h6 {
+	font-size: 0.64rem;
+	font-weight: 600;
+}
+
+button {
+	background-color: var(--sec-color);
+	/* Farbe vom Button */
+	color: var(--main-color);
+	/* Schriftfarbe */
+	border: none;
+	/* Kein Rahmen*/
+	padding: 0.75rem;
+	/* Größe des Buttons */
+	border-radius: 0.5rem;
+	/* Abgerundete Ecken */
+	font-size: 1rem;
+	/* Schriftgröße */
+	cursor: pointer;
+	/* Mauszeiger aussehen*/
+	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+	/*Schriftwahl*/
+	font-weight: 500;
+	/* Standard Schriftschnitt*/
+	margin: 1rem 0rem 1rem 0rem;
+}
+
+/* Invertieren der Farben bei Hover über den Button*/
+button:hover {
+	background-color: var(--main-color);
+	color: var(--sec-color);
+}
+
+a {
+	color: var(--main-color);
+	/* Farbe von Links */
+}
+
+a:hover {
+	color: var(--sec-color);
+	/* Farbe vom Link bei Hover */
+}
+
+@media (min-width: 768px) {
+	html {
+		font-size: 110%;
+	}
+
+	h1 {
+		font-size: 2.369rem;
+	}
+
+	h2 {
+		font-size: 1.777rem;
+	}
+
+	h3 {
+		font-size: 1.333rem;
+	}
+
+	h4 {
+		font-size: 1rem;
+	}
+
+	h5 {
+		font-size: 0.75rem;
+	}
+
+	h6 {
+		font-size: 0.563rem;
+	}
+}
