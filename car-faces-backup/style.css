@@ -38,6 +38,3 @@ main p:last-child {
 canvas {
 	border: 1px solid black;
 }
-input[type="file"] {
-	display: none;
-}

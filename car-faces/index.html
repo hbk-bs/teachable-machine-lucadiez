@@ -1,32 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Auto-Mimik Analyse</title>
-	<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto-Mimik Analyse</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-	<main>
-		<label for="file" class="file-label">Bild hochladen</label>
-		<input type="file" id="file" />
-		
-		<div id="sketch"></div>
+  <main>
+    <label for="file" class="file-label">Bild hochladen</label>
+    <input type="file" id="file" />
 
-		<div class="scale-wrapper">
-			<div class="scale-labels">
-				<span>Happy</span>
-				<span>Angry</span>
-			</div>
-			<div class="scale-bar">
-				<div class="scale-pointer" id="scale-pointer"></div>
-			</div>
-		</div>
-	</main>
+    <div id="sketch"></div>
 
-	<!-- Libs -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/ml5@0.12.2/dist/ml5.min.js"></script>
-	<script src="index.js"></script>
+    <div class="scale-wrapper">
+      <div class="scale-labels">
+        <span>Happy</span>
+        <span>Angry</span>
+      </div>
+      <div class="scale-bar">
+        <div class="scale-pointer" id="scale-pointer"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- p5.js & ml5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ml5@0.12.2/dist/ml5.min.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
