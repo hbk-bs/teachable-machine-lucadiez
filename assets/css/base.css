@@ -84,6 +84,28 @@ button {
 	margin: 1rem 0rem 1rem 0rem;
 }
 
+.button {
+	background-color: var(--sec-color);
+	/* Farbe vom Button */
+	color: var(--main-color);
+	/* Schriftfarbe */
+	border: none;
+	/* Kein Rahmen*/
+	padding: 0.75rem;
+	/* Größe des Buttons */
+	border-radius: 0.5rem;
+	/* Abgerundete Ecken */
+	font-size: 1rem;
+	/* Schriftgröße */
+	cursor: pointer;
+	/* Mauszeiger aussehen*/
+	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+	/*Schriftwahl*/
+	font-weight: 500;
+	/* Standard Schriftschnitt*/
+	margin: 1rem 0rem 1rem 0rem;
+}
+
 /* Invertieren der Farben bei Hover über den Button*/
 button:hover {
 	background-color: var(--main-color);

@@ -7,18 +7,53 @@ header {
   padding: 10px 20px;
 }
 
-.logo{
-	width: 150px;
+.logo {
+  width: 150px;
 }
 
-.logo a{
-	background-color: white;
+.logo a {
+  background-color: white;
 }
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.button {
+  text-align: center;
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+.button:hover {
+  background-color: var(--main-color);
+  color: var(--sec-color);
+}
+
+.button img {
+  width: 50px;
+}
+
+.img-hover {
+  display: none;
+}
+
+.button:hover .img-non-hover {
+  display: none;
+}
+
+.button:hover .img-hover {
+  display: inline;
 }
 
 input[type="file"] {
