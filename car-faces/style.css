@@ -7,6 +7,14 @@ header {
   padding: 10px 20px;
 }
 
+.logo{
+	width: 150px;
+}
+
+.logo a{
+	background-color: white;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -41,7 +49,7 @@ canvas {
 
 .scale-wrapper {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
 }
 
 .scale-labels {
