@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>car-faces</title>
+  <link rel="stylesheet" href="../assets/css/reset.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <!-- <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="../assets/images/logo.png" alt="logo, back to home" />
+      </a>
+    </div>
+  </header> -->
+  <main>
+    <label for="file" class="file-label">Bild hochladen</label>
+    <input type="file" id="file" />
+    <div id="sketch"></div>
+    <div class="scale-wrapper">
+      <div class="scale-labels">
+        <p>Happy</p>
+        <p>Angry</p>
+      </div>
+      <div class="scale-bar">
+        <div class="scale-pointer" id="scale-pointer"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- p5.js & ml5.js -->
+  <script src="../assets/lib/ml5.1.2.1.min.js"></script>
+  <script src="../assets/lib/p5.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
