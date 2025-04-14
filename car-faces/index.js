@@ -7,7 +7,7 @@ function preload() {
 }
 
 function setup() {
-  const canvas = createCanvas(400, 400);
+  const canvas = createCanvas(300, 300);
   canvas.parent("sketch");
   background(255);
 
@@ -45,7 +45,6 @@ function draw() {
   }
 }
 
-
 function handleFileInput(e) {
   const file = e.target.files[0];
   if (!file || !file.type.startsWith("image/")) return;
@@ -70,7 +69,7 @@ function gotResult(results) {
   let happy = 0;
   let angry = 0;
 
-  results.forEach(r => {
+  results.forEach((r) => {
     const label = r.label.toLowerCase();
     if (label.includes("happy")) happy = r.confidence;
     if (label.includes("angry")) angry = r.confidence;
