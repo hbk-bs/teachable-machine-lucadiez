@@ -1,6 +1,6 @@
 let classifier;
 let img;
-const modelURL = "https://teachablemachine.withgoogle.com/models/adk2EYL_-/";
+const modelURL = "https://teachablemachine.withgoogle.com/models/r8o11fWvJ/";
 
 function preload() {
   classifier = ml5.imageClassifier(modelURL + "model.json");
